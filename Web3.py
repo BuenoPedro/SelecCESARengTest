@@ -37,9 +37,11 @@ ofertas.click()
 
 time.sleep(3)
 
+ofertas = segundo_item.find_elements_by_css_selector(".sl-deal.js_co_deal.js_co_link")
+if(len(ofertas)<=1):
+    print('Nao ha terceira oferta')
 
-try:
-    ofertas = segundo_item.find_elements_by_css_selector(".sl-deal.js_co_deal.js_co_link")
+else:
     terceira_oferta = ofertas[2]
     site = terceira_oferta.find_element_by_class_name('sl-deal__logo-img')
 
@@ -50,8 +52,8 @@ try:
 
     preco = terceira_oferta.find_element_by_class_name('sl-deal__btn-lbl.sl-deal__btn-lbl--size-default')
     print('Preco: ' + preco.text)
-except NoSuchElementException:
-    print('Nao ha terceira oferta')
+
+
 
 
 
