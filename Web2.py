@@ -111,7 +111,7 @@ for j in range(len(tpcs)):
     num_views = tpcs[i].find_element_by_class_name('num.views')
     number = num_views.find_element_by_class_name('number').text
     print(number)
-    if(maior_numero > int(number)):
+    if(maior_numero < int(number)):
         maior_numero = int(number)
         nome_tpc = tpcs[i].find_element_by_class_name('title.raw-link.raw-topic-link')
 
